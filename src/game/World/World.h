@@ -188,6 +188,7 @@ enum eConfigUInt32Values
     CONFIG_UINT32_FOGOFWAR_HEALTH,
     CONFIG_UINT32_FOGOFWAR_STATS,
     CONFIG_UINT32_CREATURE_PICKPOCKET_RESTOCK_DELAY,
+    CONFIG_UINT32_CHAT_STATIC_AUTO_TRESHOLD,
     CONFIG_UINT32_VALUE_COUNT
 };
 
@@ -298,6 +299,7 @@ enum eConfigBoolValues
     CONFIG_BOOL_CAST_UNSTUCK,
     CONFIG_BOOL_GM_LOG_TRADE,
     CONFIG_BOOL_GM_LOWER_SECURITY,
+    CONFIG_BOOL_GM_TICKETS_QUEUE_STATUS,
     CONFIG_BOOL_SKILL_PROSPECTING,
     CONFIG_BOOL_ALWAYS_MAX_SKILL_FOR_LEVEL,
     CONFIG_BOOL_WEATHER,
@@ -512,6 +514,7 @@ class World
 
         void SendWorldText(int32 string_id, ...);
         void SendWorldTextToAboveSecurity(uint32 securityLevel, int32 string_id, ...);
+        void SendWorldTextToAcceptingTickets(int32 string_id, ...);
         void SendGlobalMessage(WorldPacket const& packet) const;
         void SendServerMessage(ServerMessageType type, const char* text = "", Player* player = nullptr) const;
         void SendZoneUnderAttackMessage(uint32 zoneId, Team team);
